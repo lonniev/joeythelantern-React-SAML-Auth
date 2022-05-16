@@ -1,4 +1,5 @@
 import fs from 'fs';
+import 'dotenv/config';
 import passport from 'passport';
 import { Strategy } from 'passport-saml';
 import config from './config';
@@ -23,8 +24,8 @@ passport.use(
             issuer: config.saml.issuer,
             protocol: 'http://',
             path: '/login/callback',
-            entryPoint: config.saml.entryPoint,
-            cert: fs.readFileSync(config.saml.cert, 'utf-8')
+            entryPoint: process.env.SAML_IDP_ENTRYPOINT_URL,
+            cert: process.env.SAML_IDP_CERT_PEM,
         },
         (expressUser: any, done: any) => {
             if (!savedUsers.includes(expressUser)) {
