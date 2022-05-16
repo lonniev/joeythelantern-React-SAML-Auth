@@ -1,7 +1,7 @@
 const config = {
     saml: {
         cert: './source/config/saml.pem',
-        entryPoint: '',
+        entryPoint: 'https://intercaxtest.okta.com/app/intercaxtest_syndeia_1/exk12p6ympcqnZ1rd697/sso/saml',
         issuer: 'http://localhost:1337',
         options: {
             failureRedirect: '/login',
