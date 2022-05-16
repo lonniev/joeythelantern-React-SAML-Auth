@@ -28,4 +28,6 @@ const getDate = () => {
     return new Date().toISOString();
 };
 
-export default { info, warn, error };
+const endpoints = { info, warn, error };
+
+export default endpoints;
